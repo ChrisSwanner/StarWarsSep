@@ -36,7 +36,7 @@ form {
 
 #star-img {
   margin-bottom: -20px;
-  transform: rotate(.5deg);
+  transform: rotate(.6deg);
 }
 
 #wars-img {
@@ -51,6 +51,7 @@ input, select {
   margin-right:auto;
   margin-left: auto;
   max-width: 200px;
+
 }
 
 label {
@@ -58,4 +59,9 @@ label {
   margin-right:auto;
   margin-left: auto;
   text-align: center;
+}
+
+input, select {
+  background-color: black !important;
+  color: white !important;
 }
