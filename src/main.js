@@ -7,7 +7,7 @@ function RandomGif() {
 }
 
 const GiphyKey = process.env.GIPHY_KEY
-console.log(GiphyKey)
+
 
 $(document).ready(function(){
   $('#form').submit(function(event){
@@ -25,6 +25,7 @@ $(document).ready(function(){
       },
       success: function(response) {
         if (type === "starships") {
+          console.log(response);
           if (response.count === 0){
             $('#typeDisplay').text("No Results")
           } else {
@@ -38,7 +39,7 @@ $(document).ready(function(){
                 },
                 success: function(gif) {
                   console.log(gif);
-                  $('ul#name').append('<li><img src=" '+ gif.data[RandomGif()].images.fixed_height.url +' ">' + "<br>Name: " + response.results[i].name + "<br> Model: " + response.results[i].model + "<br> Manufacturer: " + response.results[i].manufacturer + "<br> Cost (In Credits): " + response.results[i].cost_in_credits + "</li> <hr>");
+                  $('ul#name').append('<li><img src=" '+ gif.data[RandomGif()].images.fixed_height.url +' ">' + "<br>Name: " + response.results[i].name + "<br> Crew Size: " + response.results[i].crew + "<br> Hyper Drive Rating: " + response.results[i].hyperdrive_rating +  "<br> Model: " + response.results[i].model + "<br> Manufacturer: " + response.results[i].manufacturer + "<br> Cost (In Credits): " + response.results[i].cost_in_credits + "</li> <hr>");
                 },
                 error: function() {
                   $('#error').text("error");
@@ -96,6 +97,7 @@ $(document).ready(function(){
           }
 
         } else if (type === "planets") {
+          console.log(response);
           if (response.count === 0){
             $('#typeDisplay').text("No Results")
           } else {
@@ -129,6 +131,8 @@ $(document).ready(function(){
             }
           }
         } else if (type === "vehicles") {
+          console.log(response);
+
           if (response.count === 0){
             $('#typeDisplay').text("No Results")
           } else {
